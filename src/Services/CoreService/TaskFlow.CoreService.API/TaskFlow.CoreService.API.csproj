@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\UserService\TaskFlow.UserService.Domain\TaskFlow.UserService.Domain.csproj" />
+      <ProjectReference Include="..\TaskFlow.CoreService.Application\TaskFlow.CoreService.Application.csproj" />
+      <ProjectReference Include="..\TaskFlow.CoreService.Infrastructure.Postgres\TaskFlow.CoreService.Infrastructure.Postgres.csproj" />
+      <ProjectReference Include="..\TaskFlow.CoreService.Presentation\TaskFlow.CoreService.Presentation.csproj" />
+    </ItemGroup>
+
+</Project>
