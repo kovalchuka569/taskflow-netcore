@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F69EED1D-E915-4FDC-9051-2F13B6975412}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{2B9493C1-B70B-48CB-B3B1-2533780F2108}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserService", "UserService", "{B5018E6D-CB11-4418-8165-C5F8433411FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreService", "CoreService", "{3F49B7F8-2CDA-4344-BE2D-6E6F4AE9E2FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.UserService.API", "src\Services\UserService\TaskFlow.UserService.API\TaskFlow.UserService.API.csproj", "{8DEDC87D-E251-46E6-9BC8-A3171628A2E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.UserService.Application", "src\Services\UserService\TaskFlow.UserService.Application\TaskFlow.UserService.Application.csproj", "{11FC4AB4-214E-451E-A85C-C91C461B4695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.UserService.Domain", "src\Services\UserService\TaskFlow.UserService.Domain\TaskFlow.UserService.Domain.csproj", "{594513AF-4D36-4F27-A832-8815EFFDA124}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.UserService.Infrastructure.Postgres", "src\Services\UserService\TaskFlow.UserService.Infrastructure.Postgres\TaskFlow.UserService.Infrastructure.Postgres.csproj", "{FF289B79-E4CD-4822-9F46-B96025285EA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{27650839-3DB0-49DD-86D9-48F0AC2B8E20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.SharedKernel", "src\Shared\TaskFlow.SharedKernel\TaskFlow.SharedKernel.csproj", "{6F326AD3-CCD1-4EC8-B348-3021F3A23EC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.CoreService.API", "src\Services\CoreService\TaskFlow.CoreService.API\TaskFlow.CoreService.API.csproj", "{64748499-182A-4647-9272-F2F73A439C56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.CoreService.Application", "src\Services\CoreService\TaskFlow.CoreService.Application\TaskFlow.CoreService.Application.csproj", "{6EC7D1DD-BD08-4F22-BC7A-2723660481B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.CoreService.Domain", "src\Services\CoreService\TaskFlow.CoreService.Domain\TaskFlow.CoreService.Domain.csproj", "{184D6B10-F8A6-4E89-9DA0-413B904FFA57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.CoreService.Infrastructure.Postgres", "src\Services\CoreService\TaskFlow.CoreService.Infrastructure.Postgres\TaskFlow.CoreService.Infrastructure.Postgres.csproj", "{1C34E166-2FD4-4F77-A186-74244F33D667}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.CoreService.Presentation", "src\Services\CoreService\TaskFlow.CoreService.Presentation\TaskFlow.CoreService.Presentation.csproj", "{55FD770A-D1B4-41DC-A1DE-19BB0BDAC51A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B9493C1-B70B-48CB-B3B1-2533780F2108} = {F69EED1D-E915-4FDC-9051-2F13B6975412}
+		{B5018E6D-CB11-4418-8165-C5F8433411FA} = {2B9493C1-B70B-48CB-B3B1-2533780F2108}
+		{3F49B7F8-2CDA-4344-BE2D-6E6F4AE9E2FD} = {2B9493C1-B70B-48CB-B3B1-2533780F2108}
+		{8DEDC87D-E251-46E6-9BC8-A3171628A2E1} = {B5018E6D-CB11-4418-8165-C5F8433411FA}
+		{11FC4AB4-214E-451E-A85C-C91C461B4695} = {B5018E6D-CB11-4418-8165-C5F8433411FA}
+		{594513AF-4D36-4F27-A832-8815EFFDA124} = {B5018E6D-CB11-4418-8165-C5F8433411FA}
+		{FF289B79-E4CD-4822-9F46-B96025285EA4} = {B5018E6D-CB11-4418-8165-C5F8433411FA}
+		{27650839-3DB0-49DD-86D9-48F0AC2B8E20} = {F69EED1D-E915-4FDC-9051-2F13B6975412}
+		{6F326AD3-CCD1-4EC8-B348-3021F3A23EC6} = {27650839-3DB0-49DD-86D9-48F0AC2B8E20}
+		{64748499-182A-4647-9272-F2F73A439C56} = {3F49B7F8-2CDA-4344-BE2D-6E6F4AE9E2FD}
+		{6EC7D1DD-BD08-4F22-BC7A-2723660481B6} = {3F49B7F8-2CDA-4344-BE2D-6E6F4AE9E2FD}
+		{184D6B10-F8A6-4E89-9DA0-413B904FFA57} = {3F49B7F8-2CDA-4344-BE2D-6E6F4AE9E2FD}
+		{1C34E166-2FD4-4F77-A186-74244F33D667} = {3F49B7F8-2CDA-4344-BE2D-6E6F4AE9E2FD}
+		{55FD770A-D1B4-41DC-A1DE-19BB0BDAC51A} = {3F49B7F8-2CDA-4344-BE2D-6E6F4AE9E2FD}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DEDC87D-E251-46E6-9BC8-A3171628A2E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DEDC87D-E251-46E6-9BC8-A3171628A2E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DEDC87D-E251-46E6-9BC8-A3171628A2E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DEDC87D-E251-46E6-9BC8-A3171628A2E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11FC4AB4-214E-451E-A85C-C91C461B4695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11FC4AB4-214E-451E-A85C-C91C461B4695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11FC4AB4-214E-451E-A85C-C91C461B4695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11FC4AB4-214E-451E-A85C-C91C461B4695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{594513AF-4D36-4F27-A832-8815EFFDA124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{594513AF-4D36-4F27-A832-8815EFFDA124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{594513AF-4D36-4F27-A832-8815EFFDA124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{594513AF-4D36-4F27-A832-8815EFFDA124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF289B79-E4CD-4822-9F46-B96025285EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF289B79-E4CD-4822-9F46-B96025285EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF289B79-E4CD-4822-9F46-B96025285EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF289B79-E4CD-4822-9F46-B96025285EA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F326AD3-CCD1-4EC8-B348-3021F3A23EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F326AD3-CCD1-4EC8-B348-3021F3A23EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F326AD3-CCD1-4EC8-B348-3021F3A23EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F326AD3-CCD1-4EC8-B348-3021F3A23EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64748499-182A-4647-9272-F2F73A439C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64748499-182A-4647-9272-F2F73A439C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64748499-182A-4647-9272-F2F73A439C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64748499-182A-4647-9272-F2F73A439C56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC7D1DD-BD08-4F22-BC7A-2723660481B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC7D1DD-BD08-4F22-BC7A-2723660481B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC7D1DD-BD08-4F22-BC7A-2723660481B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC7D1DD-BD08-4F22-BC7A-2723660481B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{184D6B10-F8A6-4E89-9DA0-413B904FFA57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184D6B10-F8A6-4E89-9DA0-413B904FFA57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184D6B10-F8A6-4E89-9DA0-413B904FFA57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184D6B10-F8A6-4E89-9DA0-413B904FFA57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C34E166-2FD4-4F77-A186-74244F33D667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C34E166-2FD4-4F77-A186-74244F33D667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C34E166-2FD4-4F77-A186-74244F33D667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C34E166-2FD4-4F77-A186-74244F33D667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55FD770A-D1B4-41DC-A1DE-19BB0BDAC51A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55FD770A-D1B4-41DC-A1DE-19BB0BDAC51A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55FD770A-D1B4-41DC-A1DE-19BB0BDAC51A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55FD770A-D1B4-41DC-A1DE-19BB0BDAC51A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
