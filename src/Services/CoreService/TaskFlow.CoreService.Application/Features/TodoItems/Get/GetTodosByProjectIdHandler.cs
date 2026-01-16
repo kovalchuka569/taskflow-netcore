@@ -4,17 +4,16 @@ using TaskFlow.TaskService.Domain.TodoItems;
 
 namespace TaskFlow.CoreService.Application.Features.TodoItems.Get;
 
-public sealed class GetTodoByProjectIdHandler(ITodoRepository todoRepository)
-    : IRequestHandler<GetTodoByProjectIdQuery, Result<IReadOnlyList<GetTodoResponse>>>
+public sealed class GetTodosByProjectIdHandler(ITodoRepository todoRepository)
+    : IRequestHandler<GetTodosByProjectIdQuery, Result<IReadOnlyList<GetTodoResponse>>>
 {
-    public async Task<Result<IReadOnlyList<GetTodoResponse>>> Handle(GetTodoByProjectIdQuery request,
+    public async Task<Result<IReadOnlyList<GetTodoResponse>>> Handle(GetTodosByProjectIdQuery request,
         CancellationToken cancellationToken)
     {
         try
         {
             var projectIdResult = TodoProjectId.FromGuid(request.ProjectId);
-            if (projectIdResult.IsFailure)
-                return Result<IReadOnlyList<GetTodoResponse>>.Failure(projectIdResult.Errors);
+            if (projectIdResult.IsFailure) return Result<IReadOnlyList<GetTodoResponse>>.Failure(projectIdResult.Errors);
 
             var todos = await todoRepository.GetByProjectIdAsync(projectIdResult.Value, cancellationToken);
 

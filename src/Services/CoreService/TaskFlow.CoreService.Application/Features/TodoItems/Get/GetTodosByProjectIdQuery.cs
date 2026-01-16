@@ -3,4 +3,4 @@ using TaskFlow.SharedKernel.Primitives;
 
 namespace TaskFlow.CoreService.Application.Features.TodoItems.Get;
 
-public sealed record GetTodoByProjectIdQuery(Guid ProjectId) : IRequest<Result<IReadOnlyList<GetTodoResponse>>>;
+public sealed record GetTodosByProjectIdQuery(Guid ProjectId) : IRequest<Result<IReadOnlyList<GetTodoResponse>>>;

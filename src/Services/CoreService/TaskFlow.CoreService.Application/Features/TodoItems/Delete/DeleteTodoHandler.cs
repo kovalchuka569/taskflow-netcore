@@ -4,33 +4,27 @@ using TaskFlow.SharedKernel.Interfaces;
 using TaskFlow.SharedKernel.Primitives;
 using TaskFlow.TaskService.Domain.TodoItems;
 
-namespace TaskFlow.CoreService.Application.Features.TodoItems.UpdateDescription;
+namespace TaskFlow.CoreService.Application.Features.TodoItems.Delete;
 
-public sealed class UpdateTodoDescriptionHandler(ITodoRepository todoRepository, IUnitOfWork unitOfWork) : IRequestHandler<UpdateTodoDescriptionCommand, Result>
+public sealed class DeleteTodoHandler(ITodoRepository todoRepository, IUnitOfWork unitOfWork) : IRequestHandler<DeleteTodoCommand, Result>
 {
-    public async Task<Result> Handle(UpdateTodoDescriptionCommand request, CancellationToken cancellationToken)
+    public async Task<Result> Handle(DeleteTodoCommand request, CancellationToken cancellationToken)
     {
-        var (todoIdResult, projectIdResult, descriptionResult) = (
+        var (todoIdResult, projectIdResult) = (
             TodoId.FromGuid(request.TodoId),
-            TodoProjectId.FromGuid(request.ProjectId),
-            TodoDescription.Create(request.NewDescription)
+            TodoProjectId.FromGuid(request.ProjectId)
         );
         
-        var combined = Result.Combine(todoIdResult, projectIdResult, descriptionResult);
+        var combined = Result.Combine(todoIdResult, projectIdResult);
         if (combined.IsFailure) return Result.Failure(combined.Errors);
         
         var todo = await todoRepository.GetByTodoIdAndProjectIdAsync(todoIdResult.Value, projectIdResult.Value, cancellationToken);
         if (todo is null) return Result.Failure(TodoErrors.TodoNotFound);
-        
-        if (Equals(todo.Description, descriptionResult.Value)) return Result.Success();
-        
-        var changeResult = todo.ChangeDescription(descriptionResult.Value);
-        if (changeResult.IsFailure) return Result.Failure(changeResult.Errors);
-        
+
         try
         {
             await unitOfWork.BeginTransactionAsync(cancellationToken);
-            todoRepository.Update(todo);
+            todoRepository.Remove(todo);
             await unitOfWork.CommitAsync(cancellationToken);
         }
         catch (Exception)
@@ -38,7 +32,7 @@ public sealed class UpdateTodoDescriptionHandler(ITodoRepository todoRepository,
             await unitOfWork.RollbackAsync(cancellationToken);
             return Result.Failure(Error.DatabaseUnexpectedError);
         }
-
+        
         return Result.Success();
     }
 }
